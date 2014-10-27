@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.3.min.js"></script>
+	<link rel="stylesheet" href="css/mobiletheme.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css" />
+	
+</head>
+<body>
+			
+					
+					
+	
+			
+		
+<div data-role="page" data-theme="a" id="home">
+	 <div data-role="header" data-theme="f"  align="center"  style="background: #077adb;" data-position="fixed" style="height:20%;">
+<img src="images/banner.png" height="90%" width="90%">
+ </div>
+  <br/>
+ <br/> 
+ <br/>
+ 
+ 
+ 
+ 
+ 
+		 <br/>
+				<div data-role="content" data-theme="a" align="center">
+	
+				<input type="text"  id="username"  placeholder="Username" style="font-size:30px;" required />
+					
+						<input type="password"  id="password" placeholder="Password" style="font-size:30px;" required />
+					
+						<button id="login" style="font-size:30px;">LOGIN</button>
+	
+	
+</div>
+
+
+</div>
+<script>
+	 //Switches from Login to Registration
+  $('#login').click(function(){
+
+	$.mobile.loading('show');
+		$.ajax({
+			url:"functions/login.php",
+			data:{
+				username:$('#username').val(),
+				password:$('#password').val()
+			},
+			success:function(i){
+				if($('#username').val()==""){
+				$('.login-error').html('Please enter your username.');	
+				$.mobile.loading('hide');
+				}else if($("#password").val()==""){
+				$.mobile.loading('hide');
+				}else if(i==1){
+				alert("home");
+				window.location.href="home.html";
+				}else{
+					alert("Invalid account Please try again.");
+				}
+			}
+		});
+	});
+	
+</script>
+</body>
+</html>
