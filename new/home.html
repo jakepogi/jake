@@ -95,7 +95,7 @@ div.ex{
 			if(xmlhttp.readyState==4 && xmlhttp.status==200){
 				document.getElementById("showupdates").innerHTML=xmlhttp.responseText;
 		}}
-	xmlhttp.open("GET","functions/viewthis.php", true);
+	xmlhttp.open("GET","http://oceanadventure.hol.es/viewthis.php", true);
 		xmlhttp.send();
 	}
 	function showDate(){
