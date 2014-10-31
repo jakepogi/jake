@@ -17,9 +17,9 @@ div.ex{
 
     width: 93%;
     padding: 7px;
+ box-shadow: 1px 1px 1px 2px #c8c7c7;
 
-	 box-shadow: 1px 1px 1px 2px #c8c7c7;
-    border-radius: 5%;
+	border-radius: 5%;
 	
 }
 #box{
@@ -53,9 +53,7 @@ div.ex{
 					<div id="box" style="margin-top:-8px;">
 					<div id="showupdates" style="font:medium arial,sans-serif;font-family:'Roboto';margin-left:'-15px'">Unable to fetch updates. Please check your internet connection and try again.	</div>
 					</div>
-						<textarea id="content" required></textarea>
-						<input type="text" id="hideTime" readonly/>
-						<input type="submit" id="gtupdates" style="font-size:30px;" value="POST UPDATES">
+						
 </div>
 
 
@@ -70,7 +68,7 @@ div.ex{
 				$.mobile.loading('hide');
 				}else{
 		$.ajax({
-			url:"functions/save.php",
+			url:"http://oceanadventure.hol.es/save.php",
 			data:{
 				datetime:$('#hideTime').val(),
 				content:$('#content').val()
